@@ -1,0 +1,10 @@
+[
+  {
+    "id": "fennec-global",
+    "title": "Full-Stack Software Engineer",
+    "company": "Fennec Global",
+    "location": "Remote",
+    "period": "2022–Present",
+    "description": "Build and maintain features for a multi-tenant business platform supporting POS, inventory, subscriptions, customer communications, staff, and operational workflows. Develop Java/Spring Boot backend APIs and React, TypeScript, and React Native interfaces. Modernize backend components, investigate production issues, support AWS and Docker deployments, work with Jenkins CI/CD, and collaborate on mobile and web product improvements."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Madrasti MMS — School Management System",
+    "description": "School-management application for student records, attendance, scheduling, administration, authentication, and role-based access. Includes Spring Boot APIs, PostgreSQL data modeling, validation, unit and integration testing, and Playwright end-to-end testing.",
+    "tags": ["React", "Java", "Spring Boot", "PostgreSQL", "Playwright"]
+  },
+  {
+    "id": 2,
+    "name": "Scootry — Scooter Rental Platform",
+    "description": "MERN scooter-rental platform with scooter discovery, availability, user accounts, reservations, secure authentication, interactive maps, and wallet-related workflows.",
+    "tags": ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Leaflet"]
+  },
+  {
+    "id": 3,
+    "name": "Fennec Go — Mobile Fintech Application",
+    "description": "React Native mobile interfaces integrated with API-driven financial workflows and secure customer-facing experiences.",
+    "tags": ["React Native", "REST APIs", "Mobile Development"]
+  }
+]

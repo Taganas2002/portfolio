@@ -1,0 +1,206 @@
+.panel {
+  position: fixed;
+  bottom: 25px;
+  left: 0;
+  right: 0;
+  height: 240px;
+  background: var(--terminal-bg);
+  border-top: 1px solid var(--terminal-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  transform: translateY(100%);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.open {
+  transform: translateY(0);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--terminal-header-bg);
+  height: 35px;
+  padding: 0 8px;
+  border-bottom: 1px solid var(--terminal-border);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tabActive {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.75rem;
+  color: var(--terminal-text);
+  border-bottom: 1px solid var(--terminal-tab-underline);
+  padding-bottom: 1px;
+  letter-spacing: 0.05em;
+}
+
+.shell {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.72rem;
+  color: var(--terminal-muted);
+  background: var(--terminal-shell-bg);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.closeBtn {
+  background: transparent;
+  border: none;
+  color: var(--terminal-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 3px;
+  line-height: 1;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--terminal-text);
+}
+
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 12px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.78rem;
+  color: var(--terminal-text);
+  scrollbar-width: thin;
+  scrollbar-color: var(--terminal-scrollbar-thumb) var(--terminal-scrollbar-track);
+}
+
+.body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.body::-webkit-scrollbar-track {
+  background: var(--terminal-scrollbar-track);
+}
+
+.body::-webkit-scrollbar-thumb {
+  background: var(--terminal-scrollbar-thumb);
+  border-radius: 4px;
+}
+
+.line {
+  line-height: 1.6;
+  white-space: pre;
+}
+
+/* ── History entries (command + output pairs) ── */
+.historyEntry {
+  margin-bottom: 2px;
+}
+
+.historyCmd {
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.historyOutput {
+  line-height: 1.6;
+  white-space: pre-wrap;
+  color: var(--terminal-text);
+  opacity: 0.85;
+}
+
+.historyOutput.error {
+  color: var(--terminal-error);
+  opacity: 1;
+}
+
+/* ── Prompt colours ── */
+.promptUser {
+  color: var(--terminal-prompt);
+}
+
+.promptAt {
+  color: var(--terminal-muted);
+}
+
+.promptPath {
+  color: var(--terminal-cmd);
+}
+
+.promptSuffix {
+  color: var(--terminal-text);
+}
+
+/* ── Interactive input row ── */
+.inputRow {
+  display: flex;
+  align-items: center;
+  line-height: 1.6;
+  padding-bottom: 4px;
+}
+
+.inputField {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--terminal-text);
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.78rem;
+  caret-color: var(--terminal-prompt);
+  padding: 0;
+  margin: 0;
+}
+
+.inputField::selection {
+  background: var(--terminal-tab-underline);
+  color: var(--terminal-bg);
+}
+
+/* Blinking cursor when the field has no native caret (decoration element) */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  background: var(--terminal-prompt);
+  animation: blink 1s step-start infinite;
+  vertical-align: text-bottom;
+  margin-left: 1px;
+  flex-shrink: 0;
+}
+
+/* Hide cursor decoration while the real input is focused
+   (browser caret is visible instead) */
+.inputField:focus ~ .cursor {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .panel {
+    height: 200px;
+  }
+
+  .body {
+    font-size: 0.72rem;
+  }
+
+  .inputField {
+    font-size: 0.72rem;
+  }
+}

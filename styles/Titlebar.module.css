@@ -1,0 +1,242 @@
+.titlebar {
+  background: var(--titlebar-bg);
+  height: 30px;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #191d20;
+}
+
+.items {
+  flex: 1;
+  display: flex;
+  margin-right: auto;
+  margin-left: 0.5rem;
+  position: relative;
+}
+
+.items > * {
+  padding: 0 0.5rem;
+  cursor: pointer;
+}
+
+/* Navigation bar: back/forward buttons + address bar */
+.navBar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex: 2;
+  max-width: 340px;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: background 0.15s ease, opacity 0.15s ease;
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background: var(--sidebar-hover-bg);
+  opacity: 1;
+}
+
+.navButton:active {
+  opacity: 0.8;
+}
+
+.addressBar {
+  flex: 1;
+  height: 20px;
+  background: var(--main-bg);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+  min-width: 0;
+}
+
+.addressBar:hover {
+  border-color: var(--accent-color);
+}
+
+.addressText {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-color);
+  opacity: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  text-align: center;
+}
+
+.windowButtons {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  height: 100%;
+  position: relative;
+}
+
+.windowMessage {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 8px;
+  background: rgba(20, 20, 20, 0.93);
+  color: #e8e8e8;
+  font-size: 0.72rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 7px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: msgLife 3.2s ease forwards;
+  z-index: 200;
+}
+
+.menuMessage {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 8px;
+  background: rgba(20, 20, 20, 0.93);
+  color: #e8e8e8;
+  font-size: 0.72rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 7px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  animation: msgLife 3.2s ease forwards;
+  z-index: 200;
+}
+
+@keyframes msgLife {
+  0%   { opacity: 0; transform: translateY(-4px) scale(0.96); }
+  8%   { opacity: 1; transform: translateY(0)    scale(1);    }
+  75%  { opacity: 1; transform: translateY(0)    scale(1);    }
+  100% { opacity: 0; transform: translateY(4px)  scale(0.97); }
+}
+
+.minimize,
+.maximize,
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 30px;
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: background 0.1s ease, color 0.1s ease;
+}
+
+.minimize:hover,
+.maximize:hover {
+  background: rgba(128, 128, 128, 0.25);
+}
+
+.close:hover {
+  background: #c42b1c;
+  color: #ffffff;
+}
+
+/* AI tool icons — shown before window control buttons */
+.aiIcons {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 0 4px;
+}
+
+.aiIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #F5F5F5;
+  opacity: 0.55;
+  transition: opacity 0.15s ease, background 0.15s ease;
+}
+
+.aiIcon:hover {
+  opacity: 1;
+  background: var(--sidebar-hover-bg);
+}
+
+.aiIconClaude {
+  color: #DA7756;
+}
+
+.aiSeparator {
+  width: 1px;
+  height: 16px;
+  background: var(--text-color);
+  opacity: 0.15;
+  margin: 0 4px;
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .items p {
+    display: none;
+  }
+  .navBar {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navBar {
+    flex: 3;
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navBar {
+    gap: 1px;
+  }
+  .navButton {
+    width: 18px;
+    height: 18px;
+  }
+  .addressText {
+    font-size: 0.65rem;
+  }
+  .aiIcons {
+    display: none;
+  }
+  .aiSeparator {
+    display: none;
+  }
+}
