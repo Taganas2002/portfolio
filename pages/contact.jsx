@@ -3,7 +3,7 @@ import MailIcon from '../components/icons/MailIcon';
 import LinkedinIcon from '../components/icons/LinkedinIcon';
 import GithubIcon from '../components/icons/GithubIcon';
 
-const SUMMARY = 'Full-Stack & Backend Software Engineer with 4+ years of experience building business applications, backend APIs, and user-facing products. Skilled in Java 17/21, Spring Boot, React, TypeScript, Node.js, PostgreSQL, MongoDB, AWS, Docker, Jenkins, Kubernetes, and Linux. Experienced in building reliable features, designing data flows, integrating APIs, testing applications, debugging production issues, and delivering across the full software lifecycle.';
+const SUMMARY = 'Full-Stack & Backend Software Engineer with 4+ years of experience building business applications, backend APIs, and user-facing products. I work primarily with Java, Spring Boot, React, TypeScript, Node.js, SQL and cloud delivery tools. I enjoy turning complex business workflows into secure, maintainable software.';
 
 const ContactPage = () => {
   const contactMethods = [
@@ -64,7 +64,7 @@ const ContactPage = () => {
         <div className={styles.footer}>
           <p className={styles.availability}>
             <span className={styles.statusIndicator}></span>
-            Open to full-stack, backend Java/Spring Boot, application support, and software engineering opportunities across Canada.
+            Available for Full-Stack, Java Backend, Application Support, and Software Engineering roles across Canada. Canadian citizen — no sponsorship required.
           </p>
         </div>
       </div>

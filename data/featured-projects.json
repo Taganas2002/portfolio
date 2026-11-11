@@ -1,20 +1,28 @@
 [
   {
     "id": 1,
-    "name": "Madrasti MMS — School Management System",
-    "description": "School-management application for student records, attendance, scheduling, administration, authentication, and role-based access. Includes Spring Boot APIs, PostgreSQL data modeling, validation, unit and integration testing, and Playwright end-to-end testing.",
-    "tags": ["React", "Java", "Spring Boot", "PostgreSQL", "Playwright"]
+    "name": "Madrasti Management System (MMS)",
+    "subtitle": "Private School Management Platform",
+    "description": "A desktop management system built for private schools. It supports student and teacher management, groups, classes, subjects, enrolment, timetables, attendance, appointments, finances, teacher salaries, and reporting. It includes QR-based student check-in, role-based access control, secure licensing, and offline support.",
+    "tags": ["React", "Electron", "Java 21", "Spring Boot", "MySQL", "SQLite", "JWT", "Playwright"],
+    "source_code": "https://github.com/Taganas2002/sm-backend",
+    "image": "/projects/madrasti-dashboard.png"
   },
   {
     "id": 2,
-    "name": "Scootry — Scooter Rental Platform",
-    "description": "MERN scooter-rental platform with scooter discovery, availability, user accounts, reservations, secure authentication, interactive maps, and wallet-related workflows.",
-    "tags": ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Leaflet"]
+    "name": "FennecGo",
+    "subtitle": "FinTech Wallet Prototype",
+    "description": "A prototype digital-wallet platform designed for cash-heavy markets, with separate customer and merchant/agent mobile applications. Features include wallet balances, QR cash-in and top-up flows, peer-to-peer transfers, transaction history, favourites, and agent/store commission workflows.",
+    "tags": ["React Native", "Expo", "Java 17", "Spring Boot", "MySQL", "JWT", "Docker", "AWS EC2"],
+    "source_code": "https://github.com/Taganas2002/fennecgo-backend",
+    "image": "/projects/fennecgo-wallet.png"
   },
   {
     "id": 3,
-    "name": "Fennec Go — Mobile Fintech Application",
-    "description": "React Native mobile interfaces integrated with API-driven financial workflows and secure customer-facing experiences.",
-    "tags": ["React Native", "REST APIs", "Mobile Development"]
+    "name": "Scootry",
+    "subtitle": "Scooter Sharing and Rental Application",
+    "description": "A scooter-sharing and rental application inspired by Lime and BIXI. Users can discover available scooters on a map, create accounts, make rental reservations, and manage rental-related workflows.",
+    "tags": ["React", "Node.js", "Express.js", "MongoDB", "JWT", "Leaflet", "OpenStreetMap"],
+    "image": "/projects/scootry-map.png"
   }
 ]

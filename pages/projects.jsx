@@ -27,7 +27,7 @@ const ProjectsPage = ({ sections }) => {
 
 export async function getStaticProps() {
   const sections = [
-    { title: 'Featured Projects', projects: featuredProjects },
+    { title: 'Selected Products', projects: featuredProjects },
   ];
 
   return {

@@ -12,10 +12,10 @@ This project is a fork of [DiegoBravoH/DiegoBravoH.github.io](https://github.com
 
 | Tab             | Route       | Content                                                |
 | --------------- | ----------- | ------------------------------------------------------ |
-| `home.jsx`      | `/`         | Introduction, skills, education and experience         |
+| `home.jsx`      | `/`         | Introduction, experience, selected products, and skills |
 | `resume.html`   | `/resume`   | Résumé viewer with PDF download                        |
 | `contact.yml`   | `/contact`  | Email, LinkedIn, and GitHub                            |
-| `projects.py`   | `/projects` | Featured projects                                      |
+| `projects.py`   | `/projects` | Selected products                                      |
 | `github.md`     | `/github`   | Live repositories and contribution calendar            |
 
 A settings page (`/settings`) lets visitors switch between eight editor themes.
@@ -46,17 +46,13 @@ styles/       CSS Modules and theme definitions
 | ------------------ | ---------------------------------------------------------------- |
 | Experience         | `data/experience.json`                                           |
 | Projects           | `data/featured-projects.json`                                    |
-| Photo / résumé     | `public/anas-tag.jpg`, `public/Anas_Tag_Full_Stack_Software_Engineer.pdf` |
-| Contact links      | `pages/contact.jsx`, `components/Bottombar.jsx`                  |
+| Photo / résumé     | `public/anas-tag.png`, `public/Anas_Tag_Full_Stack_Software_Engineer.pdf` |
+| Product images     | `public/projects/`                                                        |
+| Contact links      | `pages/contact.jsx`, `components/Bottombar.jsx`                           |
 
 The GitHub page uses the `Taganas2002` account by default. Set `NEXT_PUBLIC_GITHUB_USERNAME` to override it.
 
-Add these files before expecting the photo and résumé download to appear:
-
-- `public/anas-tag.jpg`
-- `public/Anas_Tag_Full_Stack_Software_Engineer.pdf`
-
-Until the photo is added, the homepage shows an “AT” initials placeholder.
+The résumé PDF is `public/Anas_Tag_Full_Stack_Software_Engineer.pdf`. The profile photo is `public/anas-tag.png`.
 
 ## Running locally
 
@@ -74,7 +70,7 @@ The site is deployed to GitHub Pages from this repository at **https://taganas20
 
 The workflow in `.github/workflows/nextjs.yml` builds and publishes `./out` on every push to `main`.
 
-Production builds use `basePath: '/portfolio'` (see `next.config.js`). Files in `public/` must be referenced through `lib/asset.js` (for example `asset('/anas-tag.jpg')`) so they get that prefix. `next/link` handles page links automatically. If the repository is renamed, update `basePath` in `next.config.js`.
+Production builds use `basePath: '/portfolio'` (see `next.config.js`). Files in `public/` must be referenced through `lib/asset.js` (for example `asset('/anas-tag.png')`) so they get that prefix. `next/link` handles page links automatically. If the repository is renamed, update `basePath` in `next.config.js`.
 
 ## License
 

@@ -2,9 +2,48 @@
   {
     "id": "fennec-global",
     "title": "Full-Stack Software Engineer",
-    "company": "Fennec Global",
-    "location": "Remote",
-    "period": "2022–Present",
-    "description": "Build and maintain features for a multi-tenant business platform supporting POS, inventory, subscriptions, customer communications, staff, and operational workflows. Develop Java/Spring Boot backend APIs and React, TypeScript, and React Native interfaces. Modernize backend components, investigate production issues, support AWS and Docker deployments, work with Jenkins CI/CD, and collaborate on mobile and web product improvements."
+    "subtitle": "Fennec Global — Remote",
+    "period": "2022 – Present",
+    "bullets": [
+      "Build and maintain multi-tenant business-platform features for POS, inventory, subscriptions, customer communications, staff management, tenant administration, and operational workflows.",
+      "Design and develop Java / Spring Boot backend services, REST APIs, authentication flows, validation rules, and database-backed workflows.",
+      "Develop React, TypeScript, and React Native interfaces for web and mobile features.",
+      "Support releases and production troubleshooting using AWS, Docker, Jenkins CI/CD, GitHub Actions, Linux, and Kubernetes."
+    ]
+  },
+  {
+    "id": "madrasti",
+    "title": "Madrasti Management System (MMS)",
+    "subtitle": "Selected Full-Stack Project — Private School Management Platform",
+    "period": "2025 – Present",
+    "bullets": [
+      "Built a desktop management platform for private schools covering students, teachers, groups, classes, subjects, enrolment, timetables, attendance, appointments, finances, and teacher salaries.",
+      "Built with React, Electron, Java 21, Spring Boot, MySQL, SQLite, JWT, and Playwright.",
+      "Added QR student check-in, role-based permissions, offline support, secure licensing, unit tests, integration tests, and end-to-end testing."
+    ],
+    "source": "https://github.com/Taganas2002/sm-backend"
+  },
+  {
+    "id": "fennecgo",
+    "title": "FennecGo",
+    "subtitle": "Selected Full-Stack / Mobile Project — FinTech Wallet Prototype",
+    "period": "2024 – 2025",
+    "bullets": [
+      "Built a prototype wallet platform with separate customer and merchant/agent mobile applications.",
+      "Implemented wallet balances, QR cash-in/top-up flows, peer-to-peer transfers, transaction history, favourites, and commission workflows.",
+      "Built with React Native, Expo, Java 17, Spring Boot, MySQL, JWT, Docker, and AWS EC2."
+    ],
+    "source": "https://github.com/Taganas2002/fennecgo-backend"
+  },
+  {
+    "id": "scootry",
+    "title": "Scootry",
+    "subtitle": "Selected Full-Stack Project — Scooter Sharing and Rental Application",
+    "period": "2023",
+    "bullets": [
+      "Built a scooter-sharing and rental application inspired by Lime and BIXI.",
+      "Added scooter discovery, availability, customer accounts, rental reservations, JWT authentication, and interactive maps.",
+      "Built with React, Node.js, Express.js, MongoDB, Leaflet, and OpenStreetMap."
+    ]
   }
 ]

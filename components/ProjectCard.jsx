@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from '../styles/ProjectCard.module.css';
+import asset from '../lib/asset';
 
 function projectMark(name) {
   const base = name.split('—')[0].trim();
@@ -9,8 +10,7 @@ function projectMark(name) {
 }
 
 const ProjectCard = ({ project }) => {
-  const image = project.image;
-  const lowResImageUrl = image ? image.replace(/(\.[a-z]+)$/, 'm$1') : '';
+  const image = project.image ? asset(project.image) : '';
   const hasLinks = project.source_code || project.demo || project.scholar || project.pypi;
   return (
     <div className={styles.card}>
@@ -19,14 +19,13 @@ const ProjectCard = ({ project }) => {
           height={300}
           width={600}
           sizes="(max-width: 600px) 100vw, 600px"
-          placeholder="blur"
-          blurDataURL={lowResImageUrl}
           alt={project.name} />
       ) : (
         <div className={styles.placeholder} aria-hidden="true">{projectMark(project.name)}</div>
       )}
       <div className={styles.content}>
         <h3>{project.name}</h3>
+        {project.subtitle && <p className={styles.subtitle}>{project.subtitle}</p>}
         <p>{project.description}</p>
         <div className={styles.tags}>
           {project.tags.map((tag) => (
@@ -43,7 +42,7 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               className={styles.underline}
             >
-              Code
+              Source code
             </a>
           )}
           {project.demo && (

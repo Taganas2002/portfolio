@@ -12,21 +12,54 @@ const ParticlesBackground = dynamic(
   { ssr: false }
 )
 
-const SUMMARY = 'Full-Stack & Backend Software Engineer with 4+ years of experience building business applications, backend APIs, and user-facing products. Skilled in Java 17/21, Spring Boot, React, TypeScript, Node.js, PostgreSQL, MongoDB, AWS, Docker, Jenkins, Kubernetes, and Linux. Experienced in building reliable features, designing data flows, integrating APIs, testing applications, debugging production issues, and delivering across the full software lifecycle.';
+const SUMMARY = 'Full-Stack & Backend Software Engineer with 4+ years of experience building business applications, backend APIs, and user-facing products. I work primarily with Java, Spring Boot, React, TypeScript, Node.js, SQL and cloud delivery tools. I enjoy turning complex business workflows into secure, maintainable software.';
 
-const SKILLS = [
-  'Java',
-  'Spring Boot',
-  'React',
-  'TypeScript',
-  'Node.js',
-  'PostgreSQL',
-  'MongoDB',
-  'AWS',
-  'Docker',
-  'Kubernetes',
-  'CI/CD',
-  'REST APIs',
+const AVAILABILITY = 'Available for Full-Stack, Java Backend, Application Support, and Software Engineering roles across Canada. Canadian citizen — no sponsorship required.';
+
+const SKILL_GROUPS = [
+  {
+    label: 'Backend',
+    items: ['Java 17/21', 'Spring Boot', 'REST APIs', 'Spring Security', 'JWT', 'JPA/Hibernate', 'Node.js', 'Express.js'],
+  },
+  {
+    label: 'Frontend & Mobile',
+    items: ['React', 'TypeScript', 'JavaScript', 'React Native', 'Electron', 'HTML', 'CSS'],
+  },
+  {
+    label: 'Databases',
+    items: ['PostgreSQL', 'MySQL', 'SQLite', 'MongoDB', 'SQL'],
+  },
+  {
+    label: 'Cloud & Delivery',
+    items: ['AWS EC2', 'Docker', 'Jenkins', 'GitHub Actions', 'CI/CD', 'Kubernetes', 'Git', 'Linux'],
+  },
+  {
+    label: 'Quality',
+    items: ['Unit Testing', 'Integration Testing', 'Playwright E2E Testing', 'Debugging', 'Agile'],
+  },
+];
+
+const certifications = [
+  {
+    title: 'AWS Certified Solutions Architect – Associate',
+    issuer: 'Amazon Web Services (AWS)',
+    period: 'Issued February 2026 · Expires February 2029',
+  },
+  {
+    title: 'CCNA: Enterprise Networking, Security, and Automation',
+    issuer: 'Cisco',
+    period: 'Issued January 2025',
+  },
+  {
+    title: 'CCNA: Switching, Routing, and Wireless Essentials',
+    issuer: 'Cisco',
+    period: 'Issued January 2025',
+  },
+  {
+    title: 'CCNA: Introduction to Networks',
+    issuer: 'Cisco',
+    period: 'Issued June 2024',
+  },
 ];
 
 const education = [
@@ -34,11 +67,18 @@ const education = [
     org: 'University of Larbi Tebessi',
     role: 'Master’s in Network and Information Security · 2023–2025',
     badge: 'MSc',
+    logo: '/larbi-tebessi.png',
   },
   {
     org: 'University of Larbi Tebessi',
     role: 'Bachelor’s in Information Systems and Software Engineering · 2020–2023',
     badge: 'BSc',
+    logo: '/larbi-tebessi.png',
+  },
+  {
+    org: 'Ben Tababal Slimane Vocational Institute, Tebessa, Algeria',
+    role: 'Higher Technician Diploma in Information Systems · Web & Media · August 2024 · Very Good',
+    badge: 'DTS',
   },
 ];
 
@@ -62,15 +102,7 @@ export default function HomePage({ experience }) {
             <h2 className={styles.title}>Full-Stack & Backend Software Engineer</h2>
 
             <p className={styles.description}>{SUMMARY}</p>
-
-            <div className={styles.expertise}>
-              <div className={styles.expertiseTitle}>Specialization</div>
-              <div className={styles.expertiseGrid}>
-                {SKILLS.map((skill) => (
-                  <span key={skill} className={styles.expertiseTag}>{skill}</span>
-                ))}
-              </div>
-            </div>
+            <p className={styles.availability}>{AVAILABILITY}</p>
 
             <div className={styles.actions}>
               <Link href="/resume">
@@ -97,7 +129,7 @@ export default function HomePage({ experience }) {
               {photoAvailable ? (
                 <Image
                   className={styles.profileImage}
-                  src={asset('/anas-tag.jpg')}
+                  src={asset('/anas-tag.png')}
                   width={280}
                   height={280}
                   alt="Anas Tag"
@@ -108,51 +140,109 @@ export default function HomePage({ experience }) {
               )}
             </div>
 
-            <section className={styles.affiliations}>
-              <p className={styles.affiliationsLabel}>Education</p>
-              <div className={styles.affiliationsGrid}>
-                {education.map((item) => (
-                  <div
-                    key={item.role}
-                    className={`${styles.affiliationCard} ${styles.educationCard}`}
-                    aria-label={`${item.org} — ${item.role}`}
-                  >
-                    <div className={styles.affiliationBadge}>{item.badge}</div>
-                    <div className={styles.affiliationInfo}>
-                      <span className={styles.affiliationOrg}>{item.org}</span>
-                      <span className={styles.affiliationRole}>{item.role}</span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
           </div>
         </div>
       </div>
 
       <div className={styles.experience}>
-        <h2 className={styles.sectionTitle}>Experience</h2>
+        <h2 className={styles.sectionTitle}>Experience & Selected Projects</h2>
 
         <div className={styles.timeline}>
-          {experience.map((job) => (
-            <div key={job.id} className={styles.timelineItem}>
+          {experience.map((item) => (
+            <div key={item.id} className={styles.timelineItem}>
               <div className={styles.timelineDot}></div>
-              <Link href="/resume">
-                <div className={styles.timelineContent}>
-                  <div className={styles.timelineHeader}>
-                    <div>
-                      <h3 className={styles.jobTitle}>{job.title}</h3>
-                      <p className={styles.company}>{job.company} - {job.location}</p>
-                    </div>
-                    {job.period && <span className={styles.period}>{job.period}</span>}
+              <div className={styles.timelineContent}>
+                <div className={styles.timelineHeader}>
+                  <div className={styles.timelineHeading}>
+                    <h3 className={styles.jobTitle}>{item.title}</h3>
+                    <p className={styles.company}>{item.subtitle}</p>
                   </div>
-                  <p className={styles.jobDescription}>{job.description}</p>
+                  {item.period && <span className={styles.period}>{item.period}</span>}
                 </div>
-              </Link>
+                <ul className={styles.jobList}>
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                  {item.source && (
+                    <li>
+                      Source code:{' '}
+                      <a href={item.source} target="_blank" rel="noopener noreferrer">
+                        {item.source}
+                      </a>
+                    </li>
+                  )}
+                </ul>
+              </div>
             </div>
           ))}
         </div>
       </div>
+
+      <section className={styles.certifications}>
+        <h2 className={styles.sectionTitle}>Certifications</h2>
+        <div className={styles.timeline}>
+          {certifications.map((item) => (
+            <div key={item.title} className={styles.timelineItem}>
+              <div className={styles.timelineDot}></div>
+              <div className={`${styles.timelineContent} ${styles.compactPanel}`}>
+                <div className={styles.timelineHeader}>
+                  <div className={styles.timelineHeading}>
+                    <h3 className={styles.jobTitle}>{item.title}</h3>
+                    <p className={styles.company}>{item.issuer}</p>
+                  </div>
+                  <span className={styles.period}>{item.period}</span>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.educationSection}>
+        <h2 className={styles.sectionTitle}>Education</h2>
+        <div className={styles.educationList}>
+          {education.map((item) => (
+            <div
+              key={item.role}
+              className={`${styles.affiliationCard} ${styles.educationCard}`}
+              aria-label={`${item.org} — ${item.role}`}
+            >
+              {item.logo ? (
+                <div className={styles.educationLogo}>
+                  <Image
+                    src={asset(item.logo)}
+                    alt=""
+                    width={48}
+                    height={48}
+                  />
+                </div>
+              ) : (
+                <div className={styles.affiliationBadge}>{item.badge}</div>
+              )}
+              <div className={styles.affiliationInfo}>
+                <span className={styles.affiliationOrg}>{item.org}</span>
+                <span className={styles.affiliationRole}>{item.role}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.skills}>
+        <h2 className={styles.sectionTitle}>Skills</h2>
+        <div className={styles.skillGroups}>
+          {SKILL_GROUPS.map((group) => (
+            <div key={group.label} className={styles.skillGroup}>
+              <p className={styles.skillLabel}>{group.label}</p>
+              <div className={styles.expertiseGrid}>
+                {group.items.map((item) => (
+                  <span key={item} className={styles.expertiseTag}>{item}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

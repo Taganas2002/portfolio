@@ -4,15 +4,16 @@ import styles from '../styles/FakeTerminal.module.css';
 
 // ── Boot animation lines ─────────────────────────────────────────────────────
 const BOOT_LINES = [
-  '$ ./mvnw test',
-  '[INFO] Tests run: 42, Failures: 0, Errors: 0, Skipped: 0',
-  '[INFO] BUILD SUCCESS',
+  'Anas Tag — Full-Stack & Backend Software Engineer',
+  'Longueuil, Quebec, Canada',
   '',
-  '$ docker compose up -d',
-  '[+] Running 3/3',
-  '✔ Container portfolio-api started',
-  '✔ Container postgres started',
-  '✔ Container frontend started',
+  'Selected products:',
+  '  Madrasti Management System — private school management platform',
+  '  FennecGo — fintech wallet prototype',
+  '  Scootry — scooter sharing and rental application',
+  '',
+  'Available for Full-Stack, Java Backend, Application Support, and Software Engineering roles across Canada.',
+  'Canadian citizen — no sponsorship required.',
 ];
 
 // ── Command dictionary ───────────────────────────────────────────────────────
@@ -36,15 +37,17 @@ function runCommand(cmd) {
   if (token === 'whoami') {
     return [
       'Anas Tag — Full-Stack & Backend Software Engineer',
-      'Location: Longueuil, Québec, Canada',
-      'Focus: Java/Spring Boot, React, TypeScript, Node.js, cloud delivery, and reliable business applications.',
+      'Location: Longueuil, Quebec, Canada',
+      'Focus: Java, Spring Boot, React, TypeScript, Node.js, SQL, and cloud delivery.',
+      'Available for Full-Stack, Java Backend, Application Support, and Software Engineering roles across Canada.',
+      'Canadian citizen — no sponsorship required.',
     ].join('\n');
   }
 
   if (token === 'ls') {
     return [
       'portfolio/',
-      '  projects/  — Madrasti MMS, Scootry, Fennec Go',
+      '  projects/  — Madrasti Management System, FennecGo, Scootry',
       '  github/    — repositories and contribution activity',
       '  resume/    — downloadable résumé',
       '  contact/   — email, LinkedIn, and GitHub',
@@ -53,24 +56,20 @@ function runCommand(cmd) {
 
   if (token === 'skills') {
     return [
-      'Frontend:',
-      'React, TypeScript, JavaScript, React Native, HTML, CSS',
-      '',
       'Backend:',
-      'Java 17/21, Spring Boot, Node.js, Express.js, REST APIs, JWT authentication, API integration',
+      'Java 17/21, Spring Boot, REST APIs, Spring Security, JWT, JPA/Hibernate, Node.js, Express.js',
       '',
-      'Data:',
-      'PostgreSQL, MongoDB, MySQL, SQL, relational and NoSQL data modeling',
+      'Frontend & Mobile:',
+      'React, TypeScript, JavaScript, React Native, Electron, HTML, CSS',
       '',
-      'Cloud and Delivery:',
-      'AWS, Docker, Jenkins, CI/CD, Git, Linux, Kubernetes',
+      'Databases:',
+      'PostgreSQL, MySQL, SQLite, MongoDB, SQL',
       '',
-      'Testing and Engineering Practices:',
-      'Unit testing, integration testing, Playwright end-to-end testing, debugging, production support, Agile delivery, AI-assisted development tools',
+      'Cloud & Delivery:',
+      'AWS EC2, Docker, Jenkins, GitHub Actions, CI/CD, Kubernetes, Git, Linux',
       '',
-      'Languages:',
-      'English — Professional',
-      'French — Intermediate',
+      'Quality:',
+      'Unit Testing, Integration Testing, Playwright E2E Testing, Debugging, Agile',
     ].join('\n');
   }
 
