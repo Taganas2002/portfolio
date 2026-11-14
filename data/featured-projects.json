@@ -1,5 +1,15 @@
 [
   {
+    "id": 4,
+    "name": "WSP Index Admission Analysis",
+    "subtitle": "Investech Hackathon",
+    "description": "A hackathon app that asks whether WSP Global should be admitted to the index. It builds an Admit, Watch, or Reject verdict from peer comparison, value per share, deal execution, and index fit, and shows glance metrics such as price, market cap, backlog, and regional revenue. An offline snapshot is included when the live data API is unavailable.",
+    "tags": ["React", "TypeScript", "Vite", "Recharts", "Node.js", "Express"],
+    "source_code": "https://github.com/Taganas2002/investech-hackathon-starter",
+    "demo": "https://investech-hackathon-starter.vercel.app",
+    "image": "/projects/wsp-index-admission.png"
+  },
+  {
     "id": 1,
     "name": "Madrasti Management System (MMS)",
     "subtitle": "Private School Management Platform",
